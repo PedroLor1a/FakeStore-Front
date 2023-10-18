@@ -14,7 +14,6 @@ const Home = () => {
 
   return (
     <div>
-      <h1>BIENVENIDO A HOME </h1>
       <div className="card-container">
         {products.length ? (
           products.map((e) => {

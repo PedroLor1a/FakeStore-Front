@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Ajusta la altura según tu diseño */
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: inherit   
+  }
+  
+  .select {
+    width: 200px; /* Ancho del select según tus preferencias */
+  }
