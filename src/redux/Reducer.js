@@ -1,7 +1,9 @@
-import { ALL_PRODUCTS } from "./actions-types";
+import { ALL_PRODUCTS, CATEGORY, CLEAN_FILTERS, FILTER } from "./actions-types";
 
 const initialState = {
   allProducts: [],
+  copyallAlcancias: [],
+  category: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,6 +12,22 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         allProducts: action.payload,
+        copyAllAlcancias: action.payload,
+      };
+    case FILTER:
+      return {
+        ...state,
+        allProducts: action.payload,
+      };
+    case CLEAN_FILTERS:
+      return {
+        ...state,
+        allProducts: state.copyallAlcancias,
+      };
+    case CATEGORY:
+      return {
+        ...state,
+        category: action.payload,
       };
     default:
       return state;

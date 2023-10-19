@@ -1,0 +1,30 @@
+.container1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Añade margen en la parte superior para separarlo del contenido superior */
+    margin-bottom: 10px; /* Añade margen en la parte inferior para separarlo del contenido inferior */
+  }
+
+  
+  .btn {
+    font-size: 1em; /* Reduce el tamaño de la fuente */
+    padding: 5px 10px; /* Reduce el espacio dentro del botón */
+    margin: 0 3px; /* Reduce el espacio entre los elementos */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .p {
+    font-size: 0.8em; /* Reduce el tamaño de la fuente */
+    margin: 0 3px; /* Reduce el espacio entre los elementos */
+  }
+  

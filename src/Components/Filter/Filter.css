@@ -1,0 +1,15 @@
+.allSelects {
+    margin-left: 20px;
+    padding-left: 5px;  
+    border-radius: 15px;
+    cursor: pointer;
+    height: 40px;
+    width: 195px;
+    border: 2px solid #ffffff;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: sans-serif;
+    text-align: left;
+    color: #ffffff;
+    background: #7c7c7c;
+}

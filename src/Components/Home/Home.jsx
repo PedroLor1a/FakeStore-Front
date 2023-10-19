@@ -1,10 +1,13 @@
 import Card from "../Card/Card";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { allProducts } from "../../redux/actions";
+import Pagination from "../Pagination/Pagination";
 import "./Home.css";
 
 const Home = () => {
+  const [pagina, setPagina] = useState(1);
+  const [porPagina, setPorPagina] = useState(5);
   const products = useSelector((state) => state.allProducts);
   const dispatch = useDispatch();
 
@@ -12,11 +15,13 @@ const Home = () => {
     dispatch(allProducts());
   }, [dispatch]);
 
+  const maximo = products.length / porPagina;
   return (
     <div>
       <div className="card-container">
-        {products.length ? (
-          products.map((e) => {
+        {products
+          .slice((pagina - 1) * porPagina, (pagina - 1) * porPagina + porPagina)
+          .map((e) => {
             return (
               <Card
                 key={e.id}
@@ -26,12 +31,9 @@ const Home = () => {
                 image={e.image}
               />
             );
-          })
-        ) : (
-          <h1>Loading...</h1>
-        )}
+          })}
       </div>
-      <Card />
+      <Pagination pagina={pagina} setPagina={setPagina} maximo={maximo} />
     </div>
   );
 };
