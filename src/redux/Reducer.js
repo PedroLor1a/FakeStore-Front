@@ -1,4 +1,10 @@
-import { ALL_PRODUCTS, CATEGORY, CLEAN_FILTERS, FILTER } from "./actions-types";
+import {
+  ALL_PRODUCTS,
+  CATEGORY,
+  CLEAN_FILTERS,
+  FILTER,
+  PRODUCT_ID,
+} from "./actions-types";
 
 const initialState = {
   allProducts: [],
@@ -28,6 +34,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         category: action.payload,
+      };
+    case PRODUCT_ID:
+      return {
+        ...state,
+        allProducts: action.payload,
       };
     default:
       return state;

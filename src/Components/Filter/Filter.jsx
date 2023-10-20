@@ -1,16 +1,14 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { allProducts, category, filterProducts } from "../../redux/actions";
+import { allProducts, filterProducts } from "../../redux/actions";
 import "./Filter.css";
 
 const Filter = () => {
-  const categories = useSelector((state) => state.category);
-
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(category());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(category());
+  // }, [dispatch]);
 
   const handleFilter = (e) => {
     if (e.target.value === "") {

@@ -1,4 +1,10 @@
-import { ALL_PRODUCTS, FILTER, CLEAN_FILTERS, CATEGORY } from "./actions-types";
+import {
+  ALL_PRODUCTS,
+  FILTER,
+  CLEAN_FILTERS,
+  CATEGORY,
+  PRODUCT_ID,
+} from "./actions-types";
 import axios from "axios";
 
 export const allProducts = () => {
@@ -39,6 +45,20 @@ export const category = () => {
       const { data } = await axios("http://localhost:3001/category");
       return dispatch({
         type: CATEGORY,
+        payload: data,
+      });
+    };
+  } catch (error) {
+    return { error: error.message };
+  }
+};
+
+export const findById = (id) => {
+  try {
+    return async function (dispatch) {
+      const { data } = await axios(`http://localhost:3001/products/${id}`);
+      return dispatch({
+        type: PRODUCT_ID,
         payload: data,
       });
     };
